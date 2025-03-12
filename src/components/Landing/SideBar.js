@@ -22,7 +22,7 @@ const SideBar = () => {
         GQ
       </p>
       {/* logo ends */}
-      {/* tabs ends */}
+      {/* tabs starts */}
       <div className="flex flex-col items-center mt py-12 border-b border-[var(--secondary-border-color)] w-full gap-8">
         {tabs.map((tab, index) => (
           <button key={index}>{tab.icon}</button>

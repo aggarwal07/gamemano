@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1E1D16;
+  --background: linear-gradient(to bottom, #181610 0%, #302b21 50%, #181610 100%);
   --foreground: #FFFFFFCC;
   --secondary-foreground: #DAB785;
   --primary-hover-foreground: #fef3bc;
@@ -11,7 +11,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1E1D16;
+    --background: linear-gradient(to bottom, #181610 0%, #302b21 50%, #181610 100%);
     --foreground: #FFFFFFCC;
     --secondary-foreground: #DAB785;
     --primary-border-color : #FFFFFF;
