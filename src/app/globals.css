@@ -2,6 +2,8 @@
 
 :root {
   --background: linear-gradient(to bottom, #181610 0%, #302b21 50%, #181610 100%);
+  --secondary-background: #15140f;
+  --gameCard-bg-color: #FEF3BC;
   --foreground: #FFFFFFCC;
   --secondary-foreground: #DAB785;
   --primary-hover-foreground: #fef3bc;
@@ -13,6 +15,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: linear-gradient(to bottom, #181610 0%, #302b21 50%, #181610 100%);
+    --secondary-background: #15140f;
+    --gameCard-bg-color: #FEF3BC;
     --foreground: #FFFFFFCC;
     --secondary-foreground: #DAB785;
     --primary-hover-foreground: #fef3bc;
@@ -39,3 +43,18 @@ body {
 .font-prostoOne {
   font-family: var(--font-prosto-one);
 }
+
+.font-aoboshiOne {
+  font-family: var(--font-aoboshi-one);
+}
+
+/* hiding the scrollbar starts */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+/* hiding the scrollbar ends */

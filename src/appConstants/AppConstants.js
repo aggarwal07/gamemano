@@ -40,3 +40,38 @@ export const gamesData = [
     friendsPlaying: 40,
   },
 ];
+
+export const gamesCardData = [
+  {
+    gameName: "World of Warcraft",
+    playerOnline: 1200,
+    gamePrice: 48,
+    releasedDate: "10th August 2022",
+    rating: 3,
+    highlights: ["10k+ Players", "Action", "Adventure"],
+  },
+  {
+    gameName: "The Witcher",
+    playerOnline: 1200,
+    gamePrice: 48,
+    releasedDate: "10th August 2022",
+    rating: 3,
+    highlights: ["10k+ Players", "Action", "Adventure"],
+  },
+  {
+    gameName: "Horizon",
+    playerOnline: 1200,
+    gamePrice: 48,
+    releasedDate: "10th August 2022",
+    rating: 3,
+    highlights: ["10k+ Players", "Action", "Adventure"],
+  },
+  {
+    gameName: "Valorant",
+    playerOnline: 1200,
+    gamePrice: 48,
+    releasedDate: "10th August 2022",
+    rating: 3,
+    highlights: ["10k+ Players", "Action", "Adventure"],
+  },
+];
