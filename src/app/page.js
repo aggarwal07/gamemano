@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import LandingPage from "@/components/Landing/LandingPage";
 
 export default function Home() {
@@ -6,7 +7,9 @@ export default function Home() {
       <main className="">
         <LandingPage />
       </main>
-      <footer className=""></footer>
+      <footer className="mt-14">
+        <Footer />
+      </footer>
     </div>
   );
 }
