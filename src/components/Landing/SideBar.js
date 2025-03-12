@@ -23,14 +23,14 @@ const SideBar = () => {
       </p>
       {/* logo ends */}
       {/* tabs starts */}
-      <div className="flex flex-col items-center mt py-12 border-b border-[var(--secondary-border-color)] w-full gap-8">
+      <div className="flex flex-col items-center py-16 border-b border-[var(--secondary-border-color)] w-full gap-9">
         {tabs.map((tab, index) => (
           <button key={index}>{tab.icon}</button>
         ))}
       </div>
       {/* tabs ends */}
       {/* setting and logout starts */}
-      <div className="flex flex-col items-center py-12 gap-8">
+      <div className="flex flex-col items-center py-16 gap-9">
         <button>
           <IoSettingsOutline size={22} />
         </button>
