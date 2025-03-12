@@ -5,9 +5,9 @@
   --foreground: #FFFFFFCC;
   --secondary-foreground: #DAB785;
   --primary-hover-foreground: #fef3bc;
-  --primary-border-color : #FFFFFF;
-  --secondary-border-color : #FFFFFF4D;
-  --primary-button-color : #e58f28;
+  --primary-border-color: #FFFFFF;
+  --secondary-border-color: #FFFFFF4D;
+  --primary-button-color: #e58f28;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,9 +16,9 @@
     --foreground: #FFFFFFCC;
     --secondary-foreground: #DAB785;
     --primary-hover-foreground: #fef3bc;
-    --primary-border-color : #FFFFFF;
-    --secondary-border-color : #FFFFFF4D;
-    --primary-button-color : #e58f28;
+    --primary-border-color: #FFFFFF;
+    --secondary-border-color: #FFFFFF4D;
+    --primary-button-color: #e58f28;
   }
 }
 
@@ -28,6 +28,14 @@ body {
   font-family: var(--font-poppins);
 }
 
-.font-press2p{
+.font-press2p {
   font-family: var(--font-press-start-2p);
+}
+
+.font-wallpoet {
+  font-family: var(--font-wallpoet);
+}
+
+.font-prostoOne {
+  font-family: var(--font-prosto-one);
 }

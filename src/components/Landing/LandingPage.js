@@ -14,7 +14,7 @@ const LandingPage = () => {
       <div className="md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-full">
         <SideBar />
       </div>
-      <div className="md:pl-[7vw] bg-[#15140f] w-full h-[80vh]">
+      <div className="md:pl-[7vw] bg-[#15140f] w-full h-[44em]">
         <Header />
         <Carousel slides={slides} />
       </div>
