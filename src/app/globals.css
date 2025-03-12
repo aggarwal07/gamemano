@@ -3,17 +3,19 @@
 :root {
   --background: #1E1D16;
   --foreground: #FFFFFFCC;
+  --secondary-foreground: #DAB785;
   --primary-hover-foreground: #fef3bc;
   --primary-border-color : #FFFFFF;
-  --secondary-border-color : #FFFFFFCC;
+  --secondary-border-color : #FFFFFF4D;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1E1D16;
     --foreground: #FFFFFFCC;
+    --secondary-foreground: #DAB785;
     --primary-border-color : #FFFFFF;
-    --secondary-border-color : #FFFFFFCC;
+    --secondary-border-color : #FFFFFF4D;
   }
 }
 
@@ -21,4 +23,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins);
+}
+
+.font-press2p{
+  font-family: var(--font-press-start-2p);
 }

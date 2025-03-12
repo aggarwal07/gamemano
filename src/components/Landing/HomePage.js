@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 
 const HomePage = () => {
   return (
-    <div className="">
+    <div className="border-l border-[var(--secondary-border-color)] h-[100vh]">
       <Header />
     </div>
   );
