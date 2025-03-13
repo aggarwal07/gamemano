@@ -1,4 +1,5 @@
 import MasterButton from "@/utilities/MasterButton";
+import OfflineDot from "@/utilities/OfflineDot";
 import OnlineDot from "@/utilities/OnlineDot";
 import Image from "next/image";
 import React from "react";
@@ -12,14 +13,14 @@ const GamesBanner = ({ gameData, landing = false }) => {
             landing ? "font-wallpoet" : "font-aoboshiOne text-white"
           }`}
         >
-          {gameData?.gameName}
+          {gameData?.title}
         </p>
         <div className="text-right uppercase mt-1 bg-[#1E1E1E] text-xs py-1 px-2">
-          RELEASE DATE : {gameData?.releaseDate}
+          {gameData?.warrantyInformation}
         </div>
       </div>
       <div className="mt-8 text-md w-[40em] font-prostoOne">
-        {gameData?.gameDescription}
+        {gameData?.description}
       </div>
       <div className="flex mt-14 gap-7 w-fit">
         <div className="flex flex-col items-center">
@@ -28,12 +29,12 @@ const GamesBanner = ({ gameData, landing = false }) => {
             btnWidth="12em"
             paddingY="15px"
           />
-          <p className="mt-2">Buy now for {gameData?.gamePrice} only</p>
+          <p className="mt-2">Buy now for $ {gameData?.price} only</p>
           {landing && (
             <div className="flex items-center gap-2 mt-7">
-              <OnlineDot />
-              <p className="text-[12px] mb-0">
-                {gameData?.friendsPlaying} of your friends are playing
+              {gameData?.stock !== 0 ? <OnlineDot /> : <OfflineDot />}
+              <p className="text-[10px] mb-0">
+                {gameData?.stock} Units Available
               </p>
             </div>
           )}
