@@ -1,6 +1,7 @@
 "use client";
 import { isLoading, setFilterSettings } from "@/store/Actions/globalAction";
 import { fetchCategories } from "@/store/Actions/restApiActions";
+import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -44,7 +45,7 @@ const ProductFilter = () => {
             type="checkbox"
             className="appearance-none w-5 h-5 bg-[#2B2417] rounded-md border border-[var(--secondary-border-color)] checked:border-transparent relative before:content-[''] before:w-full before:h-full before:flex before:items-center before:justify-center checked:before:content-['✔'] checked:before:text-white checked:before:text-lg"
           />
-          <label className="ml-2 text-[15px] font-light">All</label>
+          <label className="ml-2 text-[14px] font-light">All</label>
         </div>
         {categories?.map((item, index) => (
           <div key={index} className="flex items-center py-3">
@@ -56,7 +57,7 @@ const ProductFilter = () => {
               type="checkbox"
               className="appearance-none w-5 h-5 bg-[#2B2417] rounded-md border border-[var(--secondary-border-color)] checked:border-transparent relative before:content-[''] before:w-full before:h-full before:flex before:items-center before:justify-center checked:before:content-['✔'] checked:before:text-white checked:before:text-lg"
             />
-            <label className="ml-2 text-[15px] font-light">{item?.name}</label>
+            <label className="ml-2 text-[14px] font-light">{item?.name}</label>
           </div>
         ))}
       </div>
@@ -86,6 +87,32 @@ const ProductFilter = () => {
         </div>
       </div>
       {/* price filter ends */}
+
+      {/* rating filter starts */}
+      <div className="mt-8">
+        <p className="font-medium">Rating</p>
+        <div className="py-3">
+          {[1, 2, 3, 4].reverse().map((item) => {
+            return (
+              <div key={item} className="flex items-center gap-2 py-1">
+                <Rating
+                  sx={{
+                    "& .MuiRating-iconEmpty": {
+                      color: "gold",
+                    },
+                  }}
+                  name="read-only"
+                  value={item}
+                  readOnly
+                  size="small"
+                />
+                <p className="font-light text-[14px]">& Up</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      {/* rating filter ends */}
     </div>
   );
 };

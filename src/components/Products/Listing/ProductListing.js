@@ -7,7 +7,7 @@ const ProductListing = () => {
   return (
     <div className="px-4">
       {/* product list section starts */}
-      <div className="flex">
+      <div className="flex gap-6">
         {/* filter division starts */}
         <ProductFilter />
         <ProductsFetched />

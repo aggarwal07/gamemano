@@ -120,6 +120,7 @@ export const fetchProducts = (categorySlug, callback) => {
         pathParams: categorySlug
           ? ApiConstants.fetchProductsCategoryWise + `/${categorySlug}`
           : ApiConstants.fetchAllProducts,
+        params: "limit=0",
       });
       if (res && res.status === 200) {
         if (callback) {

@@ -1,4 +1,5 @@
 "use Client";
+import GamesCard from "@/components/Landing/GamesCard";
 import { isLoading } from "@/store/Actions/globalAction";
 import { fetchProducts } from "@/store/Actions/restApiActions";
 import React, { useEffect, useState } from "react";
@@ -32,7 +33,15 @@ const ProductsFetched = () => {
 
   console.log(productsList, "productsList");
 
-  return <div></div>;
+  return (
+    <div className="w-fit flex flex-wrap gap-4 justify-start h-fit">
+      {productsList?.map((item, index) => (
+        <div key={index} >
+          <GamesCard/>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default ProductsFetched;
