@@ -20,25 +20,31 @@ const Header = () => {
     },
   ];
   return (
-    <div className="flex justify-between items-center px-8 py-5">
-      {/* nav items start */}
-      <div className="flex items-center">
-        {navItems.map((items, index) => {
-          return (
-            <button
-              key={index}
-              className={`text-md px-6 py-1 ${
-                index !== 2
-                  ? "border-r-[0.1px] border-[var(--secondary-border-color)]"
-                  : ""
-              } hover:text-[var(--primary-hover-foreground)] cursor-pointer`}
-            >
-              {items.name}
-            </button>
-          );
-        })}
+    <div className="flex justify-between items-center px-4 py-5">
+      <div className="flex items-center gap-7">
+        <p className="text-[var(--secondary-foreground)] font-press2p text-4xl">
+          GQ
+        </p>
+        {/* nav items start */}
+        <div className="flex items-center">
+          {navItems.map((items, index) => {
+            return (
+              <button
+                key={index}
+                className={`text-md px-6 py-1 ${
+                  index !== 2
+                    ? "border-r-[0.1px] border-[var(--secondary-border-color)]"
+                    : ""
+                } hover:text-[var(--primary-hover-foreground)] cursor-pointer`}
+              >
+                {items.name}
+              </button>
+            );
+          })}
+        </div>
+        {/* nav items ends */}
       </div>
-      {/* nav items ends */}
+
       {/* search and functionalites starts */}
       <div className="flex  items-center">
         <div className="border border-[var(--primary-border-color)] px-5 py-2 rounded-full w-[25vw] text-xs flex items-center gap-3 mr-6 ">

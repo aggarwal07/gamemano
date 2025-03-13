@@ -25,9 +25,14 @@ const LandingPage = () => {
       </div>
       {/* sidebar ends */}
 
+      {/* header starts */}
+      <div className="bg-[var(--secondary-background)]">
+        <Header />
+      </div>
+      {/* header ends */}
+
       {/* landing section starts */}
       <div className="md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[44em]">
-        <Header />
         <Carousel slides={slides} />
       </div>
       {/* landing section ends */}

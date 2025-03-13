@@ -18,12 +18,12 @@ const SideBar = () => {
   return (
     <div className="w-full h-full flex flex-col px-auto items-center py-6">
       {/* logo starts */}
-      <p className="text-[var(--secondary-foreground)] font-press2p text-4xl">
+      {/* <p className="text-[var(--secondary-foreground)] font-press2p text-4xl">
         GQ
-      </p>
+      </p> */}
       {/* logo ends */}
       {/* tabs starts */}
-      <div className="flex flex-col items-center py-16 border-b border-[var(--secondary-border-color)] w-full gap-9">
+      <div className="flex flex-col items-center py-16 border-b border-[var(--secondary-border-color)] w-full gap-9 mt-9">
         {tabs.map((tab, index) => (
           <button key={index}>{tab.icon}</button>
         ))}
