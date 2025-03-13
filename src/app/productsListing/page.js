@@ -9,7 +9,7 @@ const page = () => {
       <header>
         <Header />
       </header>
-      <main className="">
+      <main className="mt-5">
         <ProductListing />
       </main>
       <footer>

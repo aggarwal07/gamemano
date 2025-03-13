@@ -1,10 +1,9 @@
 "use client";
 import GamesCard from "@/components/Landing/GamesCard";
-import { isLoading } from "@/store/Actions/globalAction";
+import { isLoading, setProductsFetched } from "@/store/Actions/globalAction";
 import { fetchProducts } from "@/store/Actions/restApiActions";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ProductFilter from "./ProductFilter";
 import Pagination from "@mui/material/Pagination";
 
 const ProductsFetched = () => {
@@ -27,6 +26,7 @@ const ProductsFetched = () => {
             product.price <= filterSettings.upperPriceRange
         );
         setProductsList(filteredProducts);
+        dispatch(setProductsFetched(filteredProducts));
       })
     );
   }, [
@@ -76,6 +76,15 @@ const ProductsFetched = () => {
             page={currentPage}
             onChange={handlePageChange}
             color="primary"
+            sx={{
+              "& .MuiPaginationItem-root": {
+                color: "var(--foreground)",
+              },
+              "& .Mui-selected": {
+                backgroundColor: "var(--secondary-foreground) !important",
+                color: "white !important",
+              },
+            }}
           />
         </div>
       )}

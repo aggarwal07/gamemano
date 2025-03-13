@@ -14,6 +14,9 @@ let initialState = {
     ratings: null,
     sortBy: null,
   },
+  productsFetched: [],
+  productSelected: null,
+  productCategories: [],
 };
 const saveCartToLocalStorage = (cart) => {
   if (typeof window !== "undefined") {
@@ -54,6 +57,26 @@ const reducer = (oldstate = initialState, action) => {
           ratings: action.ratings ?? oldstate.filters.ratings,
           sortBy: action.sortBy ?? oldstate.filters.sortBy,
         },
+      };
+      break;
+    case ReduxValues.GlobalActions.SET_PRODUCTS_FETCHED:
+      newState = {
+        ...oldstate,
+        productsFetched: action.productsFetched,
+      };
+      break;
+
+    case ReduxValues.GlobalActions.SET_CATEGORIES:
+      newState = {
+        ...oldstate,
+        productCategories: action.productCategories,
+      };
+      break;
+
+    case ReduxValues.GlobalActions.SET_PRODUCT_SELECTED:
+      newState = {
+        ...oldstate,
+        productSelected: action.productSelected,
       };
       break;
     default:

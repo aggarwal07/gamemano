@@ -30,3 +30,23 @@ export const setFilterSettings = ({
     sortBy,
   };
 };
+export const setProductsFetched = (productsFetched = []) => {
+  return {
+    type: ReduxValues.GlobalActions.SET_PRODUCTS_FETCHED,
+    productsFetched,
+  };
+};
+
+export const setCategories = (productCategories = []) => {
+  return {
+    type: ReduxValues.GlobalActions.SET_CATEGORIES,
+    productCategories,
+  };
+};
+
+export const setProductSelected = (productSelected = null) => {
+  return {
+    type: ReduxValues.GlobalActions.SET_PRODUCT_SELECTED,
+    productSelected,
+  };
+};
