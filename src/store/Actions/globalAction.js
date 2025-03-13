@@ -14,3 +14,19 @@ export const isSnackBarOpen = ({ isOpen = false, msg, customIcon }) => {
     customIcon,
   };
 };
+export const setFilterSettings = ({
+  categories = null,
+  lowerPriceRange = 0,
+  upperPriceRange = 1000,
+  ratings = null,
+  sortBy = null,
+} = {}) => {
+  return {
+    type: ReduxValues.GlobalActions.SET_FILTER_SETTINGS,
+    categories,
+    lowerPriceRange,
+    upperPriceRange,
+    ratings,
+    sortBy,
+  };
+};

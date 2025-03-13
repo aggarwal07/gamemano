@@ -1,5 +1,6 @@
 import axios from "axios";
-import { ApiConstants } from "@/appConstants/ApiConstants";
+import ApiConstants from "@/appConstants/ApiConstants";
+import { isLoading } from "./globalAction";
 
 export const APIMethod = {
   GET: "GET",
@@ -84,17 +85,16 @@ const FetchData = async ({
 };
 //api calling
 
-export const searchProducts = (queryParams, callback) => {
+export const fetchCategories = (callback) => {
   return async (dispatch) => {
     try {
       const res = await FetchData({
         methodType: APIMethod.GET,
-        url: ApiConstants.localUrl,
+        url: ApiConstants.URI,
         isNotGameManoURL: false,
         dispatch: dispatch,
         isEncypted: false,
-        pathParams: ApiConstants.searchProducts,
-        params: queryParams,
+        pathParams: ApiConstants.fetchCategories,
       });
       if (res && res.status === 200) {
         if (callback) {
@@ -102,7 +102,33 @@ export const searchProducts = (queryParams, callback) => {
         }
       }
     } catch (error) {
-      console.log("searchApi Catch Error", error);
+      console.log("fetchCategories API error : ", error);
+      dispatch(isLoading(false));
+    }
+  };
+};
+
+export const fetchProducts = (categorySlug, callback) => {
+  return async (dispatch) => {
+    try {
+      const res = await FetchData({
+        methodType: APIMethod.GET,
+        url: ApiConstants.URI,
+        isNotGameManoURL: false,
+        dispatch: dispatch,
+        isEncypted: false,
+        pathParams: categorySlug
+          ? ApiConstants.fetchProductsCategoryWise + `/${categorySlug}`
+          : ApiConstants.fetchAllProducts,
+      });
+      if (res && res.status === 200) {
+        if (callback) {
+          callback(res.data);
+        }
+      }
+    } catch (error) {
+      console.log("fetchProducts API error : ", error);
+      dispatch(isLoading(false));
     }
   };
 };

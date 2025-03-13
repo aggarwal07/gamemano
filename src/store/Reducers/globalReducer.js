@@ -7,6 +7,13 @@ let initialState = {
     customIcon: null,
   },
   isLoading: false,
+  filters: {
+    categories: "",
+    lowerPriceRange: 0,
+    upperPriceRange: 1000,
+    ratings: null,
+    sortBy: null,
+  },
 };
 const saveCartToLocalStorage = (cart) => {
   if (typeof window !== "undefined") {
@@ -31,6 +38,21 @@ const reducer = (oldstate = initialState, action) => {
           msg: action.message || null,
           isOpen: action.isOpen || false,
           customIcon: action.icon || null,
+        },
+      };
+      break;
+    case ReduxValues.GlobalActions.SET_FILTER_SETTINGS:
+      newState = {
+        ...oldstate,
+        filters: {
+          ...oldstate.filters,
+          categories: action.categories ?? oldstate.filters.categories,
+          lowerPriceRange:
+            action.lowerPriceRange ?? oldstate.filters.lowerPriceRange,
+          upperPriceRange:
+            action.upperPriceRange ?? oldstate.filters.upperPriceRange,
+          ratings: action.ratings ?? oldstate.filters.ratings,
+          sortBy: action.sortBy ?? oldstate.filters.sortBy,
         },
       };
       break;

@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Providers from "@/store/Providers";
+import Loader from "@/utilities/Loader";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -50,7 +51,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} ${wallpoet.variable} ${prostoOne.variable} ${aoboshiOne.variable} ${pressStart2P.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <Loader />
+          {children}
+        </Providers>
       </body>
     </html>
   );

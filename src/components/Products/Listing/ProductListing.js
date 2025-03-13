@@ -1,11 +1,21 @@
-import React from 'react'
+"use client";
+import React, { use } from "react";
+import ProductFilter from "./ProductFilter";
+import ProductsFetched from "./ProductsFetched";
 
 const ProductListing = () => {
   return (
-    <div>
-      
+    <div className="px-4">
+      {/* product list section starts */}
+      <div className="flex">
+        {/* filter division starts */}
+        <ProductFilter />
+        <ProductsFetched />
+        {/* filter division ends */}
+      </div>
+      {/* product list section ends */}
     </div>
-  )
-}
+  );
+};
 
-export default ProductListing
+export default ProductListing;
