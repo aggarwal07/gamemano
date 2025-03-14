@@ -6,10 +6,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "@mui/material/Pagination";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Dropdown from "@/utilities/Dropdown";
 
 const ProductsFetched = () => {
   const [productsList, setProductsList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [isSortMenuOpen, setIsSortMenuOpen] = useState(false);
 
   const dispatch = useDispatch();
   const filterSettings = useSelector((state) => state.globalState.filters);
@@ -49,6 +52,24 @@ const ProductsFetched = () => {
   };
   //pagination work ends
 
+  const handleSort = (type) => {
+    const sortedList = [...productsList].sort((a, b) =>
+      type === "lowToHigh" ? a.price - b.price : b.price - a.price
+    );
+    setProductsList(sortedList);
+  };
+
+  const sortByMenu = [
+    {
+      title: "Price : Low to High",
+      onClick: () => handleSort("lowToHigh"),
+    },
+    {
+      title: "Price : High to Low",
+      onClick: () => handleSort("highToLow"),
+    },
+  ];
+
   return (
     <div>
       <div className="flex justify-between">
@@ -62,9 +83,19 @@ const ProductsFetched = () => {
           </p>
           <p className="text-xl">{productsList.length} results found</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div
+          onClick={() => {
+            setIsSortMenuOpen(!isSortMenuOpen);
+          }}
+          className="relative flex items-center gap-3 border border-[var(--secondary-border-color)] rounded-full px-4 cursor-pointer"
+        >
           <p>Sort by</p>
           <IoMdArrowDropdown size={22} />
+          {isSortMenuOpen && (
+            <div className="absolute -left-12 top-3">
+              <Dropdown menu={sortByMenu} />
+            </div>
+          )}
         </div>
       </div>
 

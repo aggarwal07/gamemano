@@ -43,7 +43,7 @@ const ProductFilter = () => {
             }}
             checked={categorySelected === "" ? true : false}
             type="checkbox"
-            className="appearance-none w-5 h-5 bg-[#2B2417] rounded-md border border-[var(--secondary-border-color)] checked:border-transparent relative before:content-[''] before:w-full before:h-full before:flex before:items-center before:justify-center checked:before:content-['✔'] checked:before:text-white checked:before:text-lg"
+            className="cursor-pointer appearance-none w-5 h-5 bg-[#2B2417] rounded-md border border-[var(--secondary-border-color)] checked:border-transparent relative before:content-[''] before:w-full before:h-full before:flex before:items-center before:justify-center checked:before:content-['✔'] checked:before:text-white checked:before:text-lg"
           />
           <label className="ml-2 text-[14px] font-light">All</label>
         </div>
@@ -55,7 +55,7 @@ const ProductFilter = () => {
               }}
               checked={categorySelected === item?.slug ? true : false}
               type="checkbox"
-              className="appearance-none w-5 h-5 bg-[#2B2417] rounded-md border border-[var(--secondary-border-color)] checked:border-transparent relative before:content-[''] before:w-full before:h-full before:flex before:items-center before:justify-center checked:before:content-['✔'] checked:before:text-white checked:before:text-lg"
+              className="cursor-pointer appearance-none w-5 h-5 bg-[#2B2417] rounded-md border border-[var(--secondary-border-color)] checked:border-transparent relative before:content-[''] before:w-full before:h-full before:flex before:items-center before:justify-center checked:before:content-['✔'] checked:before:text-white checked:before:text-lg"
             />
             <label className="ml-2 text-[14px] font-light">{item?.name}</label>
           </div>
