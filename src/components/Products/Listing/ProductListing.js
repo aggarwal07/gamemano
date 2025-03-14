@@ -28,7 +28,7 @@ const ProductListing = () => {
       <div className="flex items-center justify-between mt-14 px-4">
         <p className="text-3xl">
           {categorySelected !== ""
-            ? `Checkout products similar to "${categorySelected}"`
+            ? `Checkout products similar to &quot;${categorySelected}&quot;`
             : "Checkout similar products"}
         </p>
         <div className="flex items-center">
@@ -37,9 +37,7 @@ const ProductListing = () => {
         </div>
       </div>
       {productsList.length > 0 && (
-        <SimilarProducts
-          products={[productsList[0], productsList[1], productsList[2]]}
-        />
+        <SimilarProducts products={productsList.slice(0, 3)} />
       )}
       {/* similar products section ends */}
     </div>

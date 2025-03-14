@@ -53,11 +53,11 @@ const ProductsFetched = () => {
       <div className="flex justify-between">
         <div>
           <p className="text-2xl">
-            Search Results for "
+            Search Results for &quot;
             {filterSettings.categories !== ""
               ? filterSettings.categories
               : "All"}
-            "
+            &quot;
           </p>
           <p className="text-xl">{productsList.length} results found</p>
         </div>

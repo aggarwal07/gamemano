@@ -79,9 +79,7 @@ const LandingPage = () => {
 
       {/*detailed gameCards section starts */}
       {productsList.length > 0 && (
-        <SimilarProducts
-          products={[productsList[0], productsList[1], productsList[2]]}
-        />
+        <SimilarProducts products={productsList.slice(0, 3)} />
       )}
       {/*detailed gameCards section ends */}
     </div>
