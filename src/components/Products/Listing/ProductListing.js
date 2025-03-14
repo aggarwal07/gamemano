@@ -28,7 +28,7 @@ const ProductListing = () => {
       <div className="flex items-center justify-between mt-14 px-4">
         <p className="text-3xl">
           {categorySelected !== ""
-            ? `Checkout products similar to &quot;${categorySelected}&quot;`
+            ? `Checkout products similar to "${categorySelected}"`
             : "Checkout similar products"}
         </p>
         <div className="flex items-center">
