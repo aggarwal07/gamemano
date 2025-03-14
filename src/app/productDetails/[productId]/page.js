@@ -3,14 +3,14 @@ import Header from "@/components/Header/Header";
 import ProductDetails from "@/components/Products/Details/ProductDetails";
 import React from "react";
 
-const page = ({ params }) => {
+const page = () => {
   return (
     <div className="">
       <header>
         <Header />
       </header>
       <main className="mt-5">
-        <ProductDetails productId={params.productId} />
+        <ProductDetails />
       </main>
       <footer>
         <Footer />
