@@ -46,7 +46,10 @@ const Footer = () => {
     <div className="w-full bg-[var(--secondary-background)] py-8">
       <div className="flex items-center justify-center gap-7 text-white">
         {footerItems.map((item, index) => (
-          <button key={index} className="text-lg font-medium">
+          <button
+            key={index}
+            className="text-lg font-medium hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer"
+          >
             {item.title}
           </button>
         ))}
@@ -58,7 +61,7 @@ const Footer = () => {
           {socialMedia.map((item, index) => (
             <button
               key={index}
-              className="p-2 border rounded-md border-[var(--secondary-border-color)] hover:bg-[var(--primary-button-color)] transition"
+              className="p-2 border rounded-md border-[var(--secondary-border-color)] hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer hover:border-[var(--primary-hover-foreground)]"
             >
               {item.icon}
             </button>

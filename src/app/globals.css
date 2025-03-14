@@ -7,6 +7,7 @@
   --foreground: #FFFFFFCC;
   --secondary-foreground: #DAB785;
   --primary-hover-foreground: #fef3bc;
+  --secondary-hover-foreground: #fef3bc;
   --primary-border-color: #FFFFFF;
   --secondary-border-color: #FFFFFF4D;
   --primary-button-color: #e58f28;
@@ -20,6 +21,7 @@
     --foreground: #FFFFFFCC;
     --secondary-foreground: #DAB785;
     --primary-hover-foreground: #fef3bc;
+    --secondary-hover-foreground: #fef3bc;
     --primary-border-color: #FFFFFF;
     --secondary-border-color: #FFFFFF4D;
     --primary-button-color: #e58f28;
@@ -62,3 +64,7 @@ body {
 }
 
 /* hiding the scrollbar ends */
+
+/* .hoverAnimation hover {
+
+} */

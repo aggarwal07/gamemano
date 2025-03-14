@@ -1,11 +1,15 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { GrSearch } from "react-icons/gr";
 import { MdNotifications } from "react-icons/md";
 import { PiHandbagSimpleFill } from "react-icons/pi";
 const Header = () => {
+  const router = useRouter();
+
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "Store", link: "/store" },
+    { name: "Store", link: "/productsListing" },
     { name: "Leaderboard", link: "leaderboard" },
   ];
   const functionalitiesItems = [
@@ -20,9 +24,9 @@ const Header = () => {
     },
   ];
   return (
-    <div className="flex justify-between items-center px-4 py-5">
+    <div className="flex justify-between items-center py-5">
       <div className="flex items-center gap-7">
-        <p className="text-[var(--secondary-foreground)] font-press2p text-4xl">
+        <p className="text-[var(--secondary-foreground)] font-press2p text-4xl min-w-[7vw] text-center">
           GQ
         </p>
         {/* nav items start */}
@@ -30,12 +34,15 @@ const Header = () => {
           {navItems.map((items, index) => {
             return (
               <button
+                onClick={() => {
+                  router.push(items.link);
+                }}
                 key={index}
                 className={`text-md px-6 py-1 ${
                   index !== 2
                     ? "border-r-[0.1px] border-[var(--secondary-border-color)]"
                     : ""
-                } hover:text-[var(--primary-hover-foreground)] cursor-pointer`}
+                } hover:text-[var(--primary-hover-foreground)] cursor-pointer transition-all duration-400`}
               >
                 {items.name}
               </button>
@@ -70,7 +77,7 @@ const Header = () => {
                   : ""
               }  px-6`}
             >
-              <button className="rounded-full border border-[var(--primary-border-color)] p-2 hover:text-[var(--primary-hover-foreground)] cursor-pointer hover:border-[var(--primary-hover-foreground)]">
+              <button className="rounded-full border border-[var(--primary-border-color)] p-2 hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer hover:border-[var(--primary-hover-foreground)]">
                 {items.icons}
               </button>
             </div>

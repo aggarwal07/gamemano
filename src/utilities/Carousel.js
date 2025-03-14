@@ -48,7 +48,7 @@ const Carousel = ({ slides }) => {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`cursor-pointer w-2 h-2 rounded-full transition-all duration-300 ${
               current === index
                 ? "scale-125 bg-[var(--primary-hover-foreground)]"
                 : "bg-white"

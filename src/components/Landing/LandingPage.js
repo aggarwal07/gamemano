@@ -13,18 +13,21 @@ import { isLoading, setProductsFetched } from "@/store/Actions/globalAction";
 import { fetchProducts } from "@/store/Actions/restApiActions";
 import OfflineDot from "@/utilities/OfflineDot";
 import SimilarProducts from "../Products/Listing/SimilarProducts";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const [productsList, setProductsList] = useState([]);
 
   useEffect(() => {
     dispatch(isLoading(true));
     dispatch(
       fetchProducts(null, (res) => {
-        dispatch(isLoading(false));
         setProductsList(res.products);
         dispatch(setProductsFetched(res.products));
+        dispatch(isLoading(false));
       })
     );
   }, [dispatch]);
@@ -63,9 +66,14 @@ const LandingPage = () => {
             <p className="text-4xl font-press2p text-[var(--secondary-foreground)]">
               MOST TRENDING
             </p>
-            <div className="flex items-center gap-5 text-white">
-              <p>GO TO GAME STORE</p>
-              <FaLongArrowAltRight size={25} />
+            <div
+              onClick={() => {
+                router.push("/productsListing");
+              }}
+              className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer"
+            >
+              <p>GO TO STORE</p>
+              <FaLongArrowAltRight size={22} />
             </div>
           </div>
           <div className="mt-7 flex items-center gap-5 overflow-x-auto scrollbar-hide">
