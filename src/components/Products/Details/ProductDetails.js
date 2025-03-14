@@ -19,7 +19,7 @@ const ProductDetails = () => {
         dispatch(isLoading(false));
       })
     );
-  }, [dispatch]);
+  }, [dispatch, productId]);
 
   return (
     <div className="flex relative">

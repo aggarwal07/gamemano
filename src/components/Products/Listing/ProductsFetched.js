@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "@mui/material/Pagination";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Dropdown from "@/utilities/Dropdown";
+import { useMediaQuery } from "@mui/material";
 
 const ProductsFetched = () => {
   const [productsList, setProductsList] = useState([]);
@@ -43,7 +44,8 @@ const ProductsFetched = () => {
   ]);
 
   //pagination work starts
-  const itemsPerPage = 12;
+  const isSmallerScreen = useMediaQuery("(max-width: 853px)");
+  const itemsPerPage = isSmallerScreen ? 6 : 12;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentProducts = productsList.slice(indexOfFirstItem, indexOfLastItem);

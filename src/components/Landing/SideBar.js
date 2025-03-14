@@ -9,19 +9,29 @@ import { MdLogout } from "react-icons/md";
 
 const SideBar = () => {
   const tabs = [
-    { icon: <RiHomeLine className="max-md:w-4 max-md:h-4" size={22} />, name: "Home" },
-    { icon: <HiOutlineEnvelope className="max-md:w-4 max-md:h-4" size={22} />, name: "Messages" },
-    { icon: <RiStore2Line className="max-md:w-4 max-md:h-4" size={22} />, name: "Game Store" },
-    { icon: <MdOutlinePayment className="max-md:w-4 max-md:h-4" size={23} />, name: "Payments" },
-    { icon: <BsTrophy className="max-md:w-4 max-md:h-4" size={21} />, name: "Leaderboard" },
+    {
+      icon: <RiHomeLine className="max-md:w-4 max-md:h-4" size={22} />,
+      name: "Home",
+    },
+    {
+      icon: <HiOutlineEnvelope className="max-md:w-4 max-md:h-4" size={22} />,
+      name: "Messages",
+    },
+    {
+      icon: <RiStore2Line className="max-md:w-4 max-md:h-4" size={22} />,
+      name: "Game Store",
+    },
+    {
+      icon: <MdOutlinePayment className="max-md:w-4 max-md:h-4" size={23} />,
+      name: "Payments",
+    },
+    {
+      icon: <BsTrophy className="max-md:w-4 max-md:h-4" size={21} />,
+      name: "Leaderboard",
+    },
   ];
   return (
     <div className="w-full h-full flex flex-col px-auto items-center lg:py-6">
-      {/* logo starts */}
-      {/* <p className="text-[var(--secondary-foreground)] font-press2p text-4xl">
-        GQ
-      </p> */}
-      {/* logo ends */}
       {/* tabs starts */}
       <div className="flex flex-col items-center py-12 md:py-16 border-b border-[var(--secondary-border-color)] w-full gap-9 mt-9">
         {tabs.map((tab, index) => (
