@@ -48,6 +48,10 @@ body {
   font-family: var(--font-aoboshi-one);
 }
 
+.font-specialElite {
+  font-family: var(--font-special-elite);
+}
+
 /* hiding the scrollbar starts */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

@@ -133,3 +133,25 @@ export const fetchProducts = (categorySlug, callback) => {
     }
   };
 };
+export const fetchProductIdWise = (productId, callback) => {
+  return async (dispatch) => {
+    try {
+      const res = await FetchData({
+        methodType: APIMethod.GET,
+        url: ApiConstants.URI,
+        isNotGameManoURL: false,
+        dispatch: dispatch,
+        isEncypted: false,
+        pathParams: ApiConstants.fetchAllProducts + `/${productId}`,
+      });
+      if (res && res.status === 200) {
+        if (callback) {
+          callback(res.data);
+        }
+      }
+    } catch (error) {
+      console.log("fetchProductIdWise API error : ", error);
+      dispatch(isLoading(false));
+    }
+  };
+};

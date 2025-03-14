@@ -4,10 +4,17 @@ import {
   Prosto_One,
   Aoboshi_One,
   Press_Start_2P,
+  Special_Elite,
 } from "next/font/google";
 import "./globals.css";
 import Providers from "@/store/Providers";
 import Loader from "@/utilities/Loader";
+
+const specialElite = Special_Elite({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-special-elite",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
