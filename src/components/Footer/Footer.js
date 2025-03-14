@@ -44,18 +44,18 @@ const Footer = () => {
 
   return (
     <div className="w-full bg-[var(--secondary-background)] py-8">
-      <div className="flex items-center justify-center gap-7 text-white">
+      <div className="flex items-center justify-center gap-5 lg:gap-7 text-white max-md:flex-wrap">
         {footerItems.map((item, index) => (
           <button
             key={index}
-            className="text-lg font-medium hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer"
+            className="max-md:text-sm lg:text-lg font-medium hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer"
           >
             {item.title}
           </button>
         ))}
       </div>
       <hr className="text-[var(--secondary-border-color)] my-5" />
-      <div className="flex flex-col items-center text-lg font-light">
+      <div className="flex flex-col items-center md:text-lg font-light">
         <p>Copyright © GameQuest, Inc. All rights reserved</p>
         <div className="flex items-center gap-3 mt-5 text-white">
           {socialMedia.map((item, index) => (

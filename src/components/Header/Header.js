@@ -41,7 +41,7 @@ const Header = () => {
           GQ
         </p>
         {/* nav items start */}
-        <div className="flex items-center">
+        <div className="flex items-center max-sm:hidden">
           {navItems.map((items, index) => {
             return (
               <button

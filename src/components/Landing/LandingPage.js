@@ -66,7 +66,7 @@ const LandingPage = () => {
       {/* sidebar starts */}
       <div
         onMouseEnter={handleMouseEnterSideBard}
-        className="w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]"
+        className="max-sm:hidden w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]"
       >
         <SideBar />
       </div>
@@ -79,13 +79,13 @@ const LandingPage = () => {
       {/* header ends */}
 
       {/* landing section starts */}
-      <div className="pl-[7vw] md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[44em]">
+      <div className="sm:pl-[8vw] md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[44em]">
         <Carousel slides={slides} />
       </div>
       {/* landing section ends */}
 
       {/* gameCards section starts */}
-      <div className="pl-[8vw] md:pl-[7vw] w-full py-16 overflow-x-hidden">
+      <div className="sm:pl-[8vw] md:pl-[7vw] w-full py-16 overflow-x-hidden">
         <div className="px-5">
           <div className="flex items-center justify-between">
             <p className="text-2xl md:text-3xl lg:text-4xl font-press2p text-[var(--secondary-foreground)]">
