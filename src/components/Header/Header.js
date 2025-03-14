@@ -5,7 +5,7 @@ import { PiHandbagSimpleFill } from "react-icons/pi";
 const Header = () => {
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "Game Store", link: "/game-store" },
+    { name: "Store", link: "/store" },
     { name: "Leaderboard", link: "leaderboard" },
   ];
   const functionalitiesItems = [

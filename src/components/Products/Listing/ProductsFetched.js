@@ -23,7 +23,8 @@ const ProductsFetched = () => {
         const filteredProducts = res.products.filter(
           (product) =>
             product.price >= filterSettings.lowerPriceRange &&
-            product.price <= filterSettings.upperPriceRange
+            product.price <= filterSettings.upperPriceRange &&
+            product.rating >= filterSettings.ratings
         );
         setProductsList(filteredProducts);
         dispatch(setProductsFetched(filteredProducts));
@@ -34,6 +35,7 @@ const ProductsFetched = () => {
     filterSettings.categories,
     filterSettings.lowerPriceRange,
     filterSettings.upperPriceRange,
+    filterSettings.ratings
   ]);
 
   //pagination work starts

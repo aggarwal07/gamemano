@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { isLoading, setProductsFetched } from "@/store/Actions/globalAction";
 import { fetchProducts } from "@/store/Actions/restApiActions";
 import OfflineDot from "@/utilities/OfflineDot";
+import SimilarProducts from "../Products/Listing/SimilarProducts";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -78,76 +79,9 @@ const LandingPage = () => {
 
       {/*detailed gameCards section starts */}
       {productsList.length > 0 && (
-        <div>
-          <div className="md:pl-[7vw] w-full bg-[var(--secondary-background)] py-16 flex justify-end pr-36 relative pl-5">
-            <div className="absolute right-8 top-8 flex flex-col items-end">
-              <div className="flex items-center gap-2">
-                {productsList[1]?.stock !== 0 ? <OnlineDot /> : <OfflineDot />}
-                <p className="text-[12px] mb-0">
-                  {productsList[1]?.stock} Units Available
-                </p>
-              </div>
-              <div className="mt-1">
-                <Rating
-                  name="read-only"
-                  value={productsList[1]?.rating}
-                  readOnly
-                />
-              </div>
-            </div>
-            <GamesBanner gameData={productsList[1]} />
-          </div>
-
-          <div className="md:pl-[7vw] w-full bg-[var(--secondary-background)] py-16 flex justify-center relative mt-14">
-            <div className="px-5">
-              <div className="absolute right-8 top-8 flex flex-col items-end">
-                <div className="flex items-center gap-2">
-                  {productsList[2]?.stock !== 0 ? (
-                    <OnlineDot />
-                  ) : (
-                    <OfflineDot />
-                  )}
-                  <p className="text-[12px] mb-0">
-                    {productsList[2]?.stock} Units Available
-                  </p>
-                </div>
-                <div className="mt-1">
-                  <Rating
-                    name="read-only"
-                    value={productsList[2]?.rating}
-                    readOnly
-                  />
-                </div>
-              </div>
-              <GamesBanner gameData={productsList[2]} />
-            </div>
-          </div>
-
-          <div className="md:pl-[7vw] w-full bg-[var(--secondary-background)] py-16 flex justify-start px-5 relative mt-14">
-            <div className="px-5">
-              <div className="absolute right-8 top-8 flex flex-col items-end">
-                <div className="flex items-center gap-2">
-                  {productsList[1]?.stock !== 0 ? (
-                    <OnlineDot />
-                  ) : (
-                    <OfflineDot />
-                  )}
-                  <p className="text-[12px] mb-0">
-                    {productsList[1]?.stock} Units Available
-                  </p>
-                </div>
-                <div className="mt-1">
-                  <Rating
-                    name="read-only"
-                    value={productsList[3]?.rating}
-                    readOnly
-                  />
-                </div>
-              </div>
-              <GamesBanner gameData={productsList[3]} />
-            </div>
-          </div>
-        </div>
+        <SimilarProducts
+          products={[productsList[0], productsList[1], productsList[2]]}
+        />
       )}
       {/*detailed gameCards section ends */}
     </div>

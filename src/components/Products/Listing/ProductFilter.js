@@ -94,7 +94,13 @@ const ProductFilter = () => {
         <div className="py-3">
           {[1, 2, 3, 4].reverse().map((item) => {
             return (
-              <div key={item} className="flex items-center gap-2 py-1">
+              <div
+                onClick={() => {
+                  dispatch(setFilterSettings({ ratings: item }));
+                }}
+                key={item}
+                className="flex items-center gap-2 py-1"
+              >
                 <Rating
                   sx={{
                     "& .MuiRating-iconEmpty": {

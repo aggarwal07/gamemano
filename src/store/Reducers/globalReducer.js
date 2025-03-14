@@ -11,7 +11,7 @@ let initialState = {
     categories: "",
     lowerPriceRange: 0,
     upperPriceRange: 1000,
-    ratings: null,
+    ratings: 0,
     sortBy: null,
   },
   productsFetched: [],
