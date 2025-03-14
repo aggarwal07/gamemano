@@ -1,18 +1,17 @@
 "use client";
-import React, { use } from "react";
+import React from "react";
 import ProductFilter from "./ProductFilter";
 import ProductsFetched from "./ProductsFetched";
 import { useSelector } from "react-redux";
-import { gamesData } from "@/appConstants/AppConstants";
-import OnlineDot from "@/utilities/OnlineDot";
-import { Rating } from "@mui/material";
-import GamesBanner from "@/components/Landing/GamesBanner";
-import OfflineDot from "@/utilities/OfflineDot";
 import SimilarProducts from "./SimilarProducts";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const ProductListing = () => {
   const productsList = useSelector(
     (state) => state.globalState.productsFetched
+  );
+  const categorySelected = useSelector(
+    (state) => state.globalState.filters.categories
   );
   return (
     <div className="">
@@ -26,80 +25,21 @@ const ProductListing = () => {
       {/* product list section ends */}
 
       {/* similar products section starts */}
+      <div className="flex items-center justify-between mt-14 px-4">
+        <p className="text-3xl">
+          {categorySelected !== ""
+            ? `Checkout products similar to "${categorySelected}"`
+            : "Checkout similar products"}
+        </p>
+        <div className="flex items-center">
+          <p className="text-lg">VIEW ALL</p>
+          <FaLongArrowAltRight size={25} />
+        </div>
+      </div>
       {productsList.length > 0 && (
         <SimilarProducts
           products={[productsList[0], productsList[1], productsList[2]]}
         />
-        // <div>
-        //   <div className="md:pl-[7vw] w-full bg-[var(--secondary-background)] py-16 flex justify-end pr-36 relative pl-5">
-        //     <div className="absolute right-8 top-8 flex flex-col items-end">
-        //       <div className="flex items-center gap-2">
-        //         {productsList[1]?.stock !== 0 ? <OnlineDot /> : <OfflineDot />}
-        //         <p className="text-[12px] mb-0">
-        //           {productsList[1]?.stock} Units Available
-        //         </p>
-        //       </div>
-        //       <div className="mt-1">
-        //         <Rating
-        //           name="read-only"
-        //           value={productsList[1]?.rating}
-        //           readOnly
-        //         />
-        //       </div>
-        //     </div>
-        //     <GamesBanner gameData={productsList[1]} />
-        //   </div>
-
-        //   <div className="md:pl-[7vw] w-full bg-[var(--secondary-background)] py-16 flex justify-center relative mt-14">
-        //     <div className="px-5">
-        //       <div className="absolute right-8 top-8 flex flex-col items-end">
-        //         <div className="flex items-center gap-2">
-        //           {productsList[2]?.stock !== 0 ? (
-        //             <OnlineDot />
-        //           ) : (
-        //             <OfflineDot />
-        //           )}
-        //           <p className="text-[12px] mb-0">
-        //             {productsList[2]?.stock} Units Available
-        //           </p>
-        //         </div>
-        //         <div className="mt-1">
-        //           <Rating
-        //             name="read-only"
-        //             value={productsList[2]?.rating}
-        //             readOnly
-        //           />
-        //         </div>
-        //       </div>
-        //       <GamesBanner gameData={productsList[2]} />
-        //     </div>
-        //   </div>
-
-        //   <div className="md:pl-[7vw] w-full bg-[var(--secondary-background)] py-16 flex justify-start px-5 relative mt-14">
-        //     <div className="px-5">
-        //       <div className="absolute right-8 top-8 flex flex-col items-end">
-        //         <div className="flex items-center gap-2">
-        //           {productsList[1]?.stock !== 0 ? (
-        //             <OnlineDot />
-        //           ) : (
-        //             <OfflineDot />
-        //           )}
-        //           <p className="text-[12px] mb-0">
-        //             {productsList[1]?.stock} Units Available
-        //           </p>
-        //         </div>
-        //         <div className="mt-1">
-        //           <Rating
-        //             name="read-only"
-        //             value={productsList[3]?.rating}
-        //             readOnly
-        //           />
-        //         </div>
-        //       </div>
-        //       <GamesBanner gameData={productsList[3]} />
-        //     </div>
-        //   </div>
-        // </div>
       )}
       {/* similar products section ends */}
     </div>
