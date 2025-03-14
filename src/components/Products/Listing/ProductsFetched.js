@@ -74,23 +74,25 @@ const ProductsFetched = () => {
     <div>
       <div className="flex justify-between">
         <div>
-          <p className="text-2xl">
+          <p className="text-sm sm:text-xl md:text-2xl">
             Search Results for &quot;
             {filterSettings.categories !== ""
               ? filterSettings.categories
               : "All"}
             &quot;
           </p>
-          <p className="text-xl">{productsList.length} results found</p>
+          <p className="text-xs sm:text-lg md:text-xl">
+            {productsList.length} results found
+          </p>
         </div>
         <div
           onClick={() => {
             setIsSortMenuOpen(!isSortMenuOpen);
           }}
-          className="relative flex items-center gap-3 border border-[var(--secondary-border-color)] rounded-full px-4 cursor-pointer"
+          className="relative flex items-center gap-1 md:gap-3 border border-[var(--secondary-border-color)] rounded-full px-2 py-1 md:px-4 md:py-2 cursor-pointer h-fit"
         >
-          <p>Sort by</p>
-          <IoMdArrowDropdown size={22} />
+          <p className="max-sm:text-xs max-md:text-sm">Sort by</p>
+          <IoMdArrowDropdown className="max-md:w-4 max-md:h-4" size={22} />
           {isSortMenuOpen && (
             <div className="absolute -left-12 top-3">
               <Dropdown menu={sortByMenu} />

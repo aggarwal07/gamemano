@@ -16,7 +16,7 @@ const ProductListing = () => {
   return (
     <div className="">
       {/* product list section starts */}
-      <div className="flex gap-6 px-4">
+      <div className="flex gap-3 md:gap-6 px-2 md:px-4">
         {/* filter division starts */}
         <ProductFilter />
         <ProductsFetched />
@@ -26,14 +26,14 @@ const ProductListing = () => {
 
       {/* similar products section starts */}
       <div className="flex items-center justify-between mt-14 px-4">
-        <p className="text-3xl">
+        <p className="text-xl md:text-2xl lg:text-3xl">
           {categorySelected !== ""
             ? `Checkout products similar to "${categorySelected}"`
             : "Checkout similar products"}
         </p>
         <div className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer">
-          <p className="text-lg">VIEW ALL</p>
-          <FaLongArrowAltRight size={22} />
+          <p className="max-lg:text-sm">VIEW ALL</p>
+          <FaLongArrowAltRight className="max-lg:w-4 max-lg:h-4" size={22} />
         </div>
       </div>
       {productsList.length > 0 && (

@@ -1,8 +1,6 @@
-import React from "react";
-
 const MasterButton = ({
   text,
-  btnWidth = "auto",
+  btnWidth = "w-auto", // Default to automatic width
   onClick,
   fontSize = "16px",
   paddingY = "15px",
@@ -10,9 +8,8 @@ const MasterButton = ({
 }) => {
   return (
     <button
-      style={{ width: btnWidth, fontSize, padding: `${paddingY} 0` }}
       onClick={onClick}
-      className={`cursor-pointer rounded-full px-2 transition-all duration-400 bg-[var(--primary-button-color)] text-white font-medium ${
+      className={`cursor-pointer rounded-full px-4 transition-all duration-400 bg-[var(--primary-button-color)] text-white font-medium ${paddingY} ${fontSize} ${btnWidth} ${
         hover === "dark"
           ? "hover:bg-[#332919]"
           : "hover:bg-[white] hover:text-[var(--primary-button-color)]"

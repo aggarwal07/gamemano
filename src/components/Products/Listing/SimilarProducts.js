@@ -13,7 +13,7 @@ const SimilarProducts = ({ products }) => {
         return (
           <div
             key={index}
-            className={`md:pl-[9vw] w-full bg-[var(--secondary-background)] py-16 flex ${justifyContent[index]}  relative my-14`}
+            className={`pl-[9vw] md:pl-[9vw] w-full bg-[var(--secondary-background)] py-16 flex ${justifyContent[index]}  relative my-14`}
           >
             <div className="absolute right-8 top-8 flex flex-col items-end">
               <div className="flex items-center gap-2">

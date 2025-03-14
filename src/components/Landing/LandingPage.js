@@ -42,11 +42,11 @@ const LandingPage = () => {
   }));
   return (
     <div className="w-full relative">
-      <div className="w-fit h-fit absolute top-0 left-0 z-[1000]">
+      {/* <div className="w-fit h-fit absolute top-0 left-0 z-[1000]">
         <AnimatedSideBar />
-      </div>
+      </div> */}
       {/* sidebar starts */}
-      <div className="md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]">
+      <div className="w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]">
         <SideBar />
       </div>
       {/* sidebar ends */}
@@ -58,16 +58,16 @@ const LandingPage = () => {
       {/* header ends */}
 
       {/* landing section starts */}
-      <div className="md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[44em]">
+      <div className="pl-[7vw] md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[44em]">
         <Carousel slides={slides} />
       </div>
       {/* landing section ends */}
 
       {/* gameCards section starts */}
-      <div className="md:pl-[7vw] w-full py-16 overflow-x-hidden">
+      <div className="pl-[8vw] md:pl-[7vw] w-full py-16 overflow-x-hidden">
         <div className="px-5">
           <div className="flex items-center justify-between">
-            <p className="text-4xl font-press2p text-[var(--secondary-foreground)]">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-press2p text-[var(--secondary-foreground)]">
               MOST TRENDING
             </p>
             <div
@@ -76,11 +76,14 @@ const LandingPage = () => {
               }}
               className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer"
             >
-              <p>GO TO STORE</p>
-              <FaLongArrowAltRight size={22} />
+              <p className="max-lg:text-sm">GO TO STORE</p>
+              <FaLongArrowAltRight
+                className="max-lg:w-4 max-lg:h-4"
+                size={22}
+              />
             </div>
           </div>
-          <div className="mt-7 flex items-center gap-5 overflow-x-auto scrollbar-hide">
+          <div className="mt-7 flex items-center gap-3 md:gap-5 overflow-x-auto scrollbar-hide">
             {productsList?.slice(0, 6).map((item, index) => {
               return <GamesCard key={index} gameCardData={item} />;
             })}

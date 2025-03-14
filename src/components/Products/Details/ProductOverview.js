@@ -33,7 +33,12 @@ const ProductOverview = ({ product }) => {
             <p className="text-[90px] text-center mb-5 font-specialElite">
               {product?.title}
             </p>
-            <MasterButton text="Buy Now" btnWidth="14em" />
+            <MasterButton
+              text="Buy Now"
+              btnWidth="w-[8em] md:w-[10em] lg:w-[12em]"
+              paddingY="py-[10px] md:py-[13px] lg:py-[15px]"
+              fontSize="max-md:text-sm"
+            />
             <div className="rounded-[20px] bg-[var(--secondary-background)] flex items-center py-1 px-2 w-fit z-[1] mt-4">
               {product?.stock !== 0 ? <OnlineDot /> : <OfflineDot />}
               <p className="text-[10px] mb-0 ml-2 text-white">
