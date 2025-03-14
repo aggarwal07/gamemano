@@ -1,4 +1,5 @@
 "use client";
+import { capitalizeFirstLetter } from "@/appConstants/GlobalFunctions";
 import MasterButton from "@/utilities/MasterButton";
 import OfflineDot from "@/utilities/OfflineDot";
 import OnlineDot from "@/utilities/OnlineDot";
@@ -25,7 +26,7 @@ const GamesCard = ({ gameCardData }) => {
         </p>
       </div>
       <div className="z-[1]">
-        <p className="text-3xl font-aoboshiOne">{gameCardData?.title}</p>
+        <p className="text-3xl font-aoboshiOne line-clamp-2">{gameCardData?.title}</p>
         {gameCardData?.rating && (
           <Rating
             sx={{
@@ -43,7 +44,7 @@ const GamesCard = ({ gameCardData }) => {
           {gameCardData?.tags?.map((item, index) => {
             return (
               <li className={`${index === 0 ? "list-none" : ""}`} key={index}>
-                {item}
+                {capitalizeFirstLetter(item)}
               </li>
             );
           })}
@@ -58,7 +59,7 @@ const GamesCard = ({ gameCardData }) => {
               router.push(`/productDetails/${gameCardData?.id}`);
             }}
             text="Buy Now"
-            btnWidth="12em"
+            btnWidth="11em"
             fontSize="18px"
             paddingY="10px"
           />

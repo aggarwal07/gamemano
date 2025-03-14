@@ -72,7 +72,7 @@ const ProductFilter = () => {
             onChange={(e) =>
               dispatch(setFilterSettings({ lowerPriceRange: e.target.value }))
             }
-            className="outline-none bg-[#2B2417] text-center py-2 text-sm w-[5em] rounded-md border border-[var(--secondary-border-color)]"
+            className="appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-appearance:textfield] outline-none bg-[#2B2417] text-center py-2 text-sm w-[5em] rounded-md border border-[var(--secondary-border-color)]"
             type="number"
           />
           <p>-</p>
@@ -81,7 +81,7 @@ const ProductFilter = () => {
             onChange={(e) =>
               dispatch(setFilterSettings({ upperPriceRange: e.target.value }))
             }
-            className="outline-none bg-[#2B2417] text-center py-2 text-sm w-[5em] rounded-md border border-[var(--secondary-border-color)]"
+            className="appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-appearance:textfield] outline-none bg-[#2B2417] text-center py-2 text-sm w-[5em] rounded-md border border-[var(--secondary-border-color)]"
             type="number"
           />
         </div>
@@ -99,7 +99,9 @@ const ProductFilter = () => {
                   dispatch(setFilterSettings({ ratings: item }));
                 }}
                 key={item}
-                className="flex items-center gap-2 py-1"
+                className={`cursor-pointer rounded-xl px-2 flex items-center gap-2 py-1 ${
+                  filterSettings.ratings === item ? " border border-[var(--secondary-foreground)] " : ""
+                } `}
               >
                 <Rating
                   sx={{

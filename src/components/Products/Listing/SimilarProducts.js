@@ -24,7 +24,16 @@ const SimilarProducts = ({ products }) => {
               </div>
               <div className="mt-1">
                 {item?.rating && (
-                  <Rating name="read-only" value={item?.rating} readOnly />
+                  <Rating
+                    sx={{
+                      "& .MuiRating-iconEmpty": {
+                        color: "gold",
+                      },
+                    }}
+                    name="read-only"
+                    value={item?.rating}
+                    readOnly
+                  />
                 )}
               </div>
             </div>

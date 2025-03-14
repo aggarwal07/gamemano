@@ -31,9 +31,9 @@ const ProductListing = () => {
             ? `Checkout products similar to "${categorySelected}"`
             : "Checkout similar products"}
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer">
           <p className="text-lg">VIEW ALL</p>
-          <FaLongArrowAltRight size={25} />
+          <FaLongArrowAltRight size={22} />
         </div>
       </div>
       {productsList.length > 0 && (
