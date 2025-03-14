@@ -72,7 +72,12 @@ const Header = () => {
   return (
     <div className="relative flex justify-between items-center max-sm:gap-2 py-5 max-sm:pl-2">
       <div className="flex items-center gap-0 md:gap-7">
-        <p className="text-[var(--secondary-foreground)] font-press2p text-xl md:text-2xl lg:text-4xl min-w-[8vw] md:min-w-[7vw] text-center">
+        <p
+          onClick={() => {
+            router.push("/");
+          }}
+          className="cursor-pointer text-[var(--secondary-foreground)] font-press2p text-xl md:text-2xl lg:text-4xl min-w-[8vw] md:min-w-[7vw] text-center"
+        >
           GQ
         </p>
 
