@@ -5,6 +5,7 @@ import { fetchProducts } from "@/store/Actions/restApiActions";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "@mui/material/Pagination";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const ProductsFetched = () => {
   const [productsList, setProductsList] = useState([]);
@@ -35,7 +36,7 @@ const ProductsFetched = () => {
     filterSettings.categories,
     filterSettings.lowerPriceRange,
     filterSettings.upperPriceRange,
-    filterSettings.ratings
+    filterSettings.ratings,
   ]);
 
   //pagination work starts
@@ -60,6 +61,10 @@ const ProductsFetched = () => {
             &quot;
           </p>
           <p className="text-xl">{productsList.length} results found</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <p>Sort by</p>
+          <IoMdArrowDropdown size={22} />
         </div>
       </div>
 

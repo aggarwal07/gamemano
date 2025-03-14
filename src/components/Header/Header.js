@@ -1,11 +1,15 @@
 "use client";
+import { notifications } from "@/appConstants/AppConstants";
+import Dropdown from "@/utilities/Dropdown";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { GrSearch } from "react-icons/gr";
 import { MdNotifications } from "react-icons/md";
 import { PiHandbagSimpleFill } from "react-icons/pi";
 const Header = () => {
   const router = useRouter();
+
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
   const navItems = [
     { name: "Home", link: "/" },
@@ -13,7 +17,10 @@ const Header = () => {
     { name: "Leaderboard", link: "leaderboard" },
   ];
   const functionalitiesItems = [
-    { icons: <MdNotifications size={18} className="" />, onClickAction: null },
+    {
+      icons: <MdNotifications size={18} className="" />,
+      onClickAction: () => setIsNotificationOpen(!isNotificationOpen),
+    },
     {
       icons: <PiHandbagSimpleFill size={17} className="" />,
       onClickAction: null,
@@ -77,8 +84,16 @@ const Header = () => {
                   : ""
               }  px-6`}
             >
-              <button className="rounded-full border border-[var(--primary-border-color)] p-2 hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer hover:border-[var(--primary-hover-foreground)]">
+              <button
+                onClick={items.onClickAction}
+                className="relative rounded-full border border-[var(--primary-border-color)] p-2 hover:text-[var(--primary-hover-foreground)] transition-all duration-400 cursor-pointer hover:border-[var(--primary-hover-foreground)]"
+              >
                 {items.icons}
+                {index === 0 && isNotificationOpen ? (
+                  <Dropdown menu={notifications} />
+                ) : (
+                  ""
+                )}
               </button>
             </div>
           );

@@ -75,3 +75,22 @@ export const gamesCardData = [
     highlights: ["10k+ Players", "Action", "Adventure"],
   },
 ];
+
+export const notifications = [
+  {
+    title: "New Message Received",
+    onClick: () => alert("Opening Messages..."),
+  },
+  {
+    title: "Your Order Has Shipped",
+    onClick: () => alert("Tracking Order..."),
+  },
+  {
+    title: "Meeting in 10 Minutes",
+    onClick: () => alert("Opening Calendar..."),
+  },
+  {
+    title: "Software Update Available",
+    onClick: () => alert("Checking for Updates..."),
+  },
+];
