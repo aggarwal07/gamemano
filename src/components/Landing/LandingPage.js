@@ -15,6 +15,7 @@ import OfflineDot from "@/utilities/OfflineDot";
 import SimilarProducts from "../Products/Listing/SimilarProducts";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import AnimatedSideBar from "./AnimatedSideBar";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,9 @@ const LandingPage = () => {
   }));
   return (
     <div className="w-full relative">
+      <div className="w-fit h-fit absolute top-0 left-0 z-[1000]">
+        <AnimatedSideBar />
+      </div>
       {/* sidebar starts */}
       <div className="md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]">
         <SideBar />
