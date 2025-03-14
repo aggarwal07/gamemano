@@ -6,16 +6,14 @@ import Carousel from "@/utilities/Carousel";
 import GamesBanner from "./GamesBanner";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import GamesCard from "./GamesCard";
-import OnlineDot from "@/utilities/OnlineDot";
-import { Rating } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { isLoading, setProductsFetched } from "@/store/Actions/globalAction";
 import { fetchProducts } from "@/store/Actions/restApiActions";
-import OfflineDot from "@/utilities/OfflineDot";
 import SimilarProducts from "../Products/Listing/SimilarProducts";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import AnimatedSideBar from "./AnimatedSideBar";
+import gsap from "gsap";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -33,6 +31,22 @@ const LandingPage = () => {
     );
   }, [dispatch]);
 
+  const handleMouseEnterSideBard = () => {
+    gsap.to("#animatedSidebar", {
+      left: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeaveSideBard = () => {
+    gsap.to("#animatedSidebar", {
+      left: "-256px",
+      duration: 1,
+      ease: "power2.out",
+    });
+  };
+
   const slides = productsList?.slice(0, 3).map((item, index) => ({
     slide: (
       <div className="ml-14 mt-20">
@@ -42,11 +56,18 @@ const LandingPage = () => {
   }));
   return (
     <div className="w-full relative">
-      {/* <div className="w-fit h-fit absolute top-0 left-0 z-[1000]">
+      <div
+        onMouseLeave={handleMouseLeaveSideBard}
+        id="animatedSidebar"
+        className="w-fit h-fit absolute top-0 -left-64 z-[1000]"
+      >
         <AnimatedSideBar />
-      </div> */}
+      </div>
       {/* sidebar starts */}
-      <div className="w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]">
+      <div
+        onMouseEnter={handleMouseEnterSideBard}
+        className="w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]"
+      >
         <SideBar />
       </div>
       {/* sidebar ends */}
