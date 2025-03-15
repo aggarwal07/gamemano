@@ -7,7 +7,6 @@ export default function Home() {
     <div className="">
       <main className="">
         <LandingPage />
-        <AuthPage />
       </main>
       <footer className="mt-14">
         <Footer />
