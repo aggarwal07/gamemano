@@ -37,7 +37,8 @@ const ProductOverview = ({ product }) => {
               text="Buy Now"
               btnWidth="w-[8em] md:w-[10em] lg:w-[12em]"
               paddingY="py-[10px] md:py-[13px] lg:py-[15px]"
-              fontSize="max-md:text-sm"
+              fontSize="max-md:text-sm z-[1000]"
+              hover="light"
             />
             <div className="rounded-[20px] flex items-center py-1 px-2 w-fit z-[1] mt-4">
               {product?.stock !== 0 ? <OnlineDot /> : <OfflineDot />}
