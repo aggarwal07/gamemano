@@ -1,5 +1,5 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import ProductOverview from "./ProductOverview";
 import { useDispatch } from "react-redux";
@@ -10,6 +10,17 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  //protected route work starts
+  useEffect(() => {
+    const authData = localStorage.getItem("authData");
+    if (!authData || authData?.username === "" || authData?.password === "") {
+      localStorage.clear();
+      router.push("/login");
+    }
+  });
+  //protected route work ends
 
   useEffect(() => {
     dispatch(isLoading(true));

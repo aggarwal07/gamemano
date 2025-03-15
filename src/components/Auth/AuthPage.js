@@ -23,7 +23,8 @@ const AuthPage = ({ type }) => {
       return;
     }
     setError("");
-    // Implement authentication logic here
+    localStorage.setItem("authData", JSON.stringify(formData));
+    router.back();
     console.log("Form Submitted", formData);
   };
 
