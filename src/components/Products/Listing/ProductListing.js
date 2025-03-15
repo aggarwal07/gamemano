@@ -25,17 +25,19 @@ const ProductListing = () => {
       {/* product list section ends */}
 
       {/* similar products section starts */}
-      <div className="flex items-center justify-between mt-14 px-4">
-        <p className="text-xl md:text-2xl lg:text-3xl">
-          {categorySelected !== ""
-            ? `Checkout products similar to "${categorySelected}"`
-            : "Checkout similar products"}
-        </p>
-        <div className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer">
-          <p className="max-lg:text-sm">VIEW ALL</p>
-          <FaLongArrowAltRight className="max-lg:w-4 max-lg:h-4" size={22} />
+      {productsList.length > 0 && (
+        <div className="flex items-center justify-between mt-14 px-4">
+          <p className="text-xl md:text-2xl lg:text-3xl">
+            {categorySelected !== ""
+              ? `Checkout products similar to "${categorySelected}"`
+              : "Checkout similar products"}
+          </p>
+          <div className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer">
+            <p className="max-lg:text-sm">VIEW ALL</p>
+            <FaLongArrowAltRight className="max-lg:w-4 max-lg:h-4" size={22} />
+          </div>
         </div>
-      </div>
+      )}
       {productsList.length > 0 && (
         <SimilarProducts products={productsList.slice(0, 3)} />
       )}
