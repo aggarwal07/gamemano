@@ -74,16 +74,16 @@ const ProductsFetched = () => {
 
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex max-[400px]:flex-col max-[400px]:gap-2 justify-between">
         <div>
-          <p className="text-sm sm:text-xl md:text-2xl">
+          <p className="text-xs sm:text-xl md:text-2xl">
             Search Results for &quot;
             {filterSettings.categories !== ""
               ? filterSettings.categories
               : "All"}
             &quot;
           </p>
-          <p className="text-xs sm:text-lg md:text-xl">
+          <p className="text-[12px] sm:text-lg md:text-xl">
             {productsList.length} results found
           </p>
         </div>
@@ -91,7 +91,7 @@ const ProductsFetched = () => {
           onClick={() => {
             setIsSortMenuOpen(!isSortMenuOpen);
           }}
-          className="relative flex items-center gap-1 md:gap-3 border border-[var(--secondary-border-color)] rounded-full px-2 py-1 md:px-4 md:py-2 cursor-pointer h-fit"
+          className="relative flex items-center max-[400px]:justify-center gap-1 md:gap-3 border border-[var(--secondary-border-color)] rounded-full px-2 py-1 md:px-4 md:py-2 cursor-pointer h-fit"
         >
           <p className="max-sm:text-xs max-md:text-sm">Sort by</p>
           <IoMdArrowDropdown className="max-md:w-4 max-md:h-4" size={22} />

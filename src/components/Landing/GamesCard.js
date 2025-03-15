@@ -11,7 +11,7 @@ import React from "react";
 const GamesCard = ({ gameCardData }) => {
   const router = useRouter();
   return (
-    <div className="rounded-[10px] p-4 bg-[var(--gameCard-bg-color)] h-[17em] md:h-[19em] lg:h-[23em] flex flex-col justify-between text-black w-[14.5em] md:w-[18em] lg:w-[21.5em] min-w-[14.5em] md:min-w-[18em] lg:min-w-[21.5em] relative overflow-hidden">
+    <div className="rounded-[10px] p-4 bg-[var(--gameCard-bg-color)] h-[16em] md:h-[19em] lg:h-[23em] flex flex-col justify-between text-black w-[11.5em] md:w-[18em] lg:w-[21.5em] min-w-[11.5em] md:min-w-[18em] lg:min-w-[21.5em] relative overflow-hidden">
       <Image
         alt="polaroid"
         src={gameCardData?.thumbnail || "/Images/Logos/iosLogo.png"}

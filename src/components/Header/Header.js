@@ -44,7 +44,13 @@ const Header = () => {
     },
   ];
   const hamburgerTabs = [
-    { icon: <RiHomeLine size={17} />, name: "Home", onClickAction: null },
+    {
+      icon: <RiHomeLine size={17} />,
+      name: "Home",
+      onClickAction: () => {
+        router.push("/");
+      },
+    },
     {
       icon: <HiOutlineEnvelope size={17} />,
       name: "Messages",
@@ -52,8 +58,10 @@ const Header = () => {
     },
     {
       icon: <RiStore2Line size={17} />,
-      name: "Game Store",
-      onClickAction: null,
+      name: "Store",
+      onClickAction: () => {
+        router.push("/productsListing");
+      },
     },
     {
       icon: <MdOutlinePayment size={17} />,
@@ -66,7 +74,14 @@ const Header = () => {
       name: "Settings",
       onClickAction: null,
     },
-    { icon: <MdLogout size={17} />, name: "Logout", onClickAction: null },
+    {
+      icon: <MdLogout size={17} />,
+      name: "Logout",
+      onClickAction: () => {
+        localStorage.clear();
+        router.push("/login");
+      },
+    },
   ];
 
   return (
@@ -115,10 +130,7 @@ const Header = () => {
           {hamburgerTabs.map((items, index) => (
             <button
               key={index}
-              onClick={() => {
-                router.push(items.link);
-                setIsMenuOpen(false); // Close menu on click
-              }}
+              onClick={items.onClickAction}
               className="py-2 w-full text-center border-b border-gray-200 last:border-0 hover:bg-gray-100 flex items-center justify-center gap-2"
             >
               {items.icon}
