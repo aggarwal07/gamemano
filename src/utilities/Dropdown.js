@@ -2,7 +2,7 @@ import React from "react";
 
 const Dropdown = ({ menu = ["asda", "asdasd", "asdadsa"] }) => {
   return (
-    <div className="rounded-xl p-3 bg-[var(--secondary-background)] z-[1000] min-w-[15em] absolute top-14 -left-24 border border-[var(--secondary-border-color)]">
+    <div className="rounded-xl p-3 bg-[var(--secondary-background)] z-[1000] min-w-[15em] absolute top-14 -left-48 lg:-left-24 border border-[var(--secondary-border-color)]">
       {menu?.map((item, index) => {
         return (
           <p
