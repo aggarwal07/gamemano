@@ -15,7 +15,7 @@ const Carousel = ({ slides }) => {
   const startAutoSlide = () => {
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3500);
+    }, 2500);
   };
 
   const resetAutoSlide = () => {
