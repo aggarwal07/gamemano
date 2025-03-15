@@ -12,11 +12,15 @@ import React from "react";
 const AnimatedSideBar = () => {
   const router = useRouter();
   const tabs = [
-    { icon: <RiHomeLine size={22} />, name: "Home" },
-    { icon: <HiOutlineEnvelope size={22} />, name: "Messages" },
-    { icon: <RiStore2Line size={22} />, name: "Game Store" },
-    { icon: <MdOutlinePayment size={23} />, name: "Payments" },
-    { icon: <BsTrophy size={21} />, name: "Leaderboard" },
+    { icon: <RiHomeLine size={22} />, name: "Home", link: "/" },
+    { icon: <HiOutlineEnvelope size={22} />, name: "Messages", link: "" },
+    {
+      icon: <RiStore2Line size={22} />,
+      name: "Store",
+      link: "/productsListing",
+    },
+    { icon: <MdOutlinePayment size={23} />, name: "Payments", link: "" },
+    { icon: <BsTrophy size={21} />, name: "Leaderboard", link: "" },
   ];
   return (
     <div className="w-fit py-10 bg-[#3D352A80] backdrop-blur-[40px] shadow-[0px_4px_24px_-1px_#00000033]">
@@ -31,6 +35,9 @@ const AnimatedSideBar = () => {
       <div className="flex flex-col py-14 border-b border-[var(--secondary-border-color)] w-full gap-9 text-white">
         {tabs.map((tab, index) => (
           <button
+            onClick={() => {
+              router.push(tab.link);
+            }}
             className="flex items-center gap-4 cursor-pointer px-5 transition-all duration-400 hover:text-[var(--primary-button-color)]"
             key={index}
           >
@@ -44,7 +51,13 @@ const AnimatedSideBar = () => {
           <IoSettingsOutline size={22} />
           <p className="text-lg">Settings</p>
         </button>
-        <button className="flex items-center gap-4 cursor-pointer px-5 transition-all duration-400 hover:text-[var(--primary-button-color)]">
+        <button
+          onClick={() => {
+            localStorage.clear();
+            router.push("login");
+          }}
+          className="flex items-center gap-4 cursor-pointer px-5 transition-all duration-400 hover:text-[var(--primary-button-color)]"
+        >
           <MdLogout size={22} />
           <p className="text-lg">Logout</p>
         </button>
