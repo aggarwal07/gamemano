@@ -4,16 +4,16 @@ import {
   Prosto_One,
   Aoboshi_One,
   Press_Start_2P,
-  Special_Elite,
+  Cinzel,
 } from "next/font/google";
 import "./globals.css";
 import Providers from "@/store/Providers";
 import Loader from "@/utilities/Loader";
 
-const specialElite = Special_Elite({
-  weight: "400",
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-special-elite",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-cinzel",
 });
 
 const poppins = Poppins({
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${wallpoet.variable} ${prostoOne.variable} ${aoboshiOne.variable} ${pressStart2P.variable} antialiased`}
+        className={`${poppins.variable} ${wallpoet.variable} ${prostoOne.variable} ${aoboshiOne.variable} ${pressStart2P.variable} ${cinzel.variable} antialiased`}
       >
         <Providers>
           <Loader />

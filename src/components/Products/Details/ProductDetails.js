@@ -4,11 +4,19 @@ import React, { useEffect, useState } from "react";
 import ProductOverview from "./ProductOverview";
 import { useDispatch } from "react-redux";
 import { isLoading } from "@/store/Actions/globalAction";
-import { fetchProductIdWise } from "@/store/Actions/restApiActions";
+import {
+  fetchProductIdWise,
+  fetchProducts,
+} from "@/store/Actions/restApiActions";
+import ProductReviews from "./ProductReviews";
+import CustomPolygon from "@/utilities/CustomPolygon";
+import MasterButton from "@/utilities/MasterButton";
+import RecommendedProducts from "./RecommendedProducts";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const [similarProd, setSimilarProd] = useState(null);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -32,6 +40,19 @@ const ProductDetails = () => {
     );
   }, [dispatch, productId]);
 
+  useEffect(() => {
+    if (!product) {
+      return;
+    }
+    dispatch(isLoading(true));
+    dispatch(
+      fetchProducts(product?.category, (res) => {
+        dispatch(isLoading(false));
+        setSimilarProd(res.products);
+      })
+    );
+  }, [dispatch, product]);
+
   return (
     <div className="flex relative">
       {/* divider of screen starts */}
@@ -41,12 +62,62 @@ const ProductDetails = () => {
       <div className="relative">
         {/* product overview card starts */}
         <ProductOverview product={product} />
-        <div className="md:pl-[9vw] mt-72">
-          <div className="px-14">
+        <div className="md:pl-[9vw] mt-28 xl:mt-60">
+          <div className="px-5 xl:px-14">
             <p className="text-lg">{product?.description}</p>
           </div>
         </div>
         {/* product overview card ends */}
+
+        {/* review section starts */}
+        <div>
+          <ProductReviews reviewsArray={product?.reviews} />
+        </div>
+        {/* review section ends */}
+
+        {/* detailed banner section starts */}
+        <div className="w-full bg-[var(--secondary-background)] py-20">
+          <div className="md:pl-[9vw] w-full">
+            <div className="flex items-center justify-around px-5">
+              <div className="w-[35%]">
+                <CustomPolygon width="w-full" />
+              </div>
+              <div className="flex flex-col items-center w-[45%]">
+                <p className="font-aoboshiOne text-2xl text-[var(--secondary-foreground)]">
+                  Buy Your
+                </p>
+                <p className="font-aoboshiOne text-6xl text-[var(--secondary-foreground)]">
+                  Product
+                </p>
+                <p className="font-prostoOne text-lg mt-14">
+                  Ac odio sodales mi leo vitae dui nibh turpis aliquet.
+                  Porttitor aenean egestas cras mauris at. Mi nisl turpis
+                  sodales aliquet. Quis risus lorem enim magna nisl.
+                </p>
+                <p className="font-prostoOne text-lg mb-14 mt-5">
+                  Nibh vitae morbi urna sapien mattis dolor dictum massa id.
+                  Eget arcu nulla dolor nisi. Facilisis risus lectus odio enim
+                  ut tortor facilisi neque nibh.
+                </p>
+                <MasterButton
+                  text="Buy Now"
+                  btnWidth="w-[8em] md:w-[10em] lg:w-[12em]"
+                  paddingY="py-[10px] md:py-[13px] lg:py-[15px]"
+                  fontSize="max-md:text-sm"
+                  hover="light"
+                />
+                <p className="font-semibold mt-2">Buy now for $40 only</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* detailed banner section starts */}
+
+        {/* recommended products section starts */}
+        <div>
+          <RecommendedProducts similarProds={similarProd} />
+        </div>
+        {/* recommended products section ends */}
       </div>
     </div>
   );

@@ -1,11 +1,17 @@
 "use client";
 import React from "react";
 
-const CustomPolygon = ({ width = "40%", xAxis = 285, yAxis = 15, zIndex }) => {
+const CustomPolygon = ({
+  width = "40%",
+  height = "h-auto",
+  xAxis = 285,
+  yAxis = 15,
+  zIndex,
+}) => {
   return (
     <svg
-      style={{ width: width, zIndex: zIndex }}
-      className="w-[40%] h-auto"
+      style={{ zIndex: zIndex }}
+      className={`${width} ${height}`}
       viewBox="0 0 300 200"
       xmlns="http://www.w3.org/2000/svg"
     >
