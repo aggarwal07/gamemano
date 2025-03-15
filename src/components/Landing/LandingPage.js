@@ -49,7 +49,7 @@ const LandingPage = () => {
 
   const slides = productsList?.slice(0, 3).map((item, index) => ({
     slide: (
-      <div className="ml-14 mt-20">
+      <div className="mx-3 sm:ml-14 mt-20">
         <GamesBanner key={index} gameData={item} landing={true} />
       </div>
     ),
@@ -66,7 +66,7 @@ const LandingPage = () => {
       {/* sidebar starts */}
       <div
         onMouseEnter={handleMouseEnterSideBard}
-        className="max-sm:hidden w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]"
+        className="max-sm:hidden sm:w-[8vw] md:w-[7vw] absolute left-0 top-0 border-r border-[var(--secondary-border-color)] h-[100%] z-[10]"
       >
         <SideBar />
       </div>
@@ -79,7 +79,7 @@ const LandingPage = () => {
       {/* header ends */}
 
       {/* landing section starts */}
-      <div className="sm:pl-[8vw] md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[44em]">
+      <div className="sm:pl-[8vw] md:pl-[7vw] bg-[var(--secondary-background)] w-full h-[39em] sm:h-[44em]">
         <Carousel slides={slides} />
       </div>
       {/* landing section ends */}
@@ -87,8 +87,8 @@ const LandingPage = () => {
       {/* gameCards section starts */}
       <div className="sm:pl-[8vw] md:pl-[7vw] w-full py-16 overflow-x-hidden">
         <div className="px-5">
-          <div className="flex items-center justify-between">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-press2p text-[var(--secondary-foreground)]">
+          <div className="flex items-center justify-between max-sm:gap-5">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-press2p text-[var(--secondary-foreground)]">
               MOST TRENDING
             </p>
             <div
@@ -97,7 +97,7 @@ const LandingPage = () => {
               }}
               className="flex items-center gap-2 border-b border-transparent text-white transition-all duration-400 hover:text-[var(--primary-button-color)] hover:border-[var(--primary-button-color)] cursor-pointer"
             >
-              <p className="max-lg:text-sm">GO TO STORE</p>
+              <p className="max-sm:text-xs max-lg:text-sm">GO TO STORE</p>
               <FaLongArrowAltRight
                 className="max-lg:w-4 max-lg:h-4"
                 size={22}

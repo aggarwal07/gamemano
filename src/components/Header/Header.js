@@ -131,8 +131,8 @@ const Header = () => {
 
       {/* Search and Functionalities */}
       <div className="flex items-center">
-        <div className="border border-[var(--primary-border-color)] px-3 lg:px-5 py-1 lg:py-2 rounded-full w-[50%] sm:w-[25vw] text-xs flex items-center gap-3 mr-6">
-          <GrSearch size={17} />
+        <div className="border border-[var(--primary-border-color)] px-2 sm:px-3 lg:px-5 py-1 lg:py-2 rounded-full w-full sm:w-[25vw] text-xs flex items-center gap-1 sm:gap-3 mr-1.5 sm:mr-6">
+          <GrSearch className="max-sm:w-3.5 max-sm:h-3.5" size={17} />
           <input
             style={{ outline: "none", border: "none" }}
             type="text"
@@ -151,7 +151,7 @@ const Header = () => {
               index !== 2
                 ? "border-r-[0.1px] border-[var(--secondary-border-color)]"
                 : ""
-            } px-3 lg:px-6`}
+            } px-1.5 sm:px-3 lg:px-6`}
           >
             <button
               onClick={items.onClickAction}

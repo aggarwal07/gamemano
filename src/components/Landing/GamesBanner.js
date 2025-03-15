@@ -12,20 +12,20 @@ const GamesBanner = ({ gameData, landing = false }) => {
     <div className="w-fit">
       <div className="w-fit">
         <p
-          className={`max-w-[90%] lg:leading-20 text-5xl lg:text-[70px] ${
+          className={`max-w-[90%] lg:leading-20 text-4xl sm:text-5xl lg:text-[70px] ${
             landing ? "font-wallpoet" : "font-aoboshiOne text-white"
           }`}
         >
           {gameData?.title}
         </p>
-        <div className="text-right uppercase mt-1 bg-[#1E1E1E] text-[10px] lg:text-xs py-1 px-2 w-[30%] lg:w-[50%]">
+        <div className="text-right uppercase mt-1 bg-[#1E1E1E] text-[10px] lg:text-xs py-1 px-2 w-[40%] lg:w-[50%]">
           {gameData?.warrantyInformation}
         </div>
       </div>
       <div className="mt-8 max-lg:text-sm w-[90%] md:w-[40em] font-prostoOne">
         {gameData?.description}
       </div>
-      <div className="flex mt-10 lg:mt-14 gap-7 w-fit">
+      <div className="flex mt-7 sm:mt-10 lg:mt-14 gap-7 w-fit">
         <div className="flex flex-col items-center">
           <MasterButton
             onClick={() => {

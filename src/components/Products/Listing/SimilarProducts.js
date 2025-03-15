@@ -37,7 +37,9 @@ const SimilarProducts = ({ products }) => {
                 )}
               </div>
             </div>
-            <GamesBanner gameData={item} />
+            <div className="max-sm:mt-5">
+              <GamesBanner gameData={item} />
+            </div>
           </div>
         );
       })}
