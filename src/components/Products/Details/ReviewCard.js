@@ -4,7 +4,7 @@ import React from "react";
 
 const ReviewCard = ({ review }) => {
   return (
-    <div className="bg-[var(--secondary-foreground)] backdrop-blur-[40px] shadow-[0px_4px_24px_-1px_#00000033] p-4 w-[20em] rounded-xl">
+    <div className="bg-[var(--secondary-foreground)] backdrop-blur-[40px] shadow-[0px_4px_24px_-1px_#00000033] min-w-[15em] p-4 w-[20em] rounded-xl min-h-[100%]">
       <div className="flex items-center gap-5">
         <div className="w-[50px] h-[50px] rounded-full border border-[#281E1FCC]"></div>
         <div className="h-fit">

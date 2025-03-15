@@ -56,13 +56,13 @@ const ProductDetails = () => {
   return (
     <div className="flex relative">
       {/* divider of screen starts */}
-      <div className="md:w-[9vw] border-r border-[var(--secondary-border-color)] min-h-[100%] absolute left-0 top-0 z-[-1]" />
+      <div className="max-md:hidden md:w-[9vw] border-r border-[var(--secondary-border-color)] min-h-[100%] absolute left-0 top-0 z-[-1]" />
       {/* divider of screen ends */}
 
       <div className="relative">
         {/* product overview card starts */}
         <ProductOverview product={product} />
-        <div className="md:pl-[9vw] mt-28 xl:mt-60">
+        <div className="md:pl-[9vw] mt-14 sm:mt-28 xl:mt-60">
           <div className="px-5 xl:px-14">
             <p className="text-lg">{product?.description}</p>
           </div>
@@ -78,27 +78,25 @@ const ProductDetails = () => {
         {/* detailed banner section starts */}
         <div className="w-full bg-[var(--secondary-background)] py-20">
           <div className="md:pl-[9vw] w-full">
-            <div className="flex items-center justify-around px-5">
-              <div className="w-[35%]">
+            <div className="flex max-md:flex-col items-center max-md:gap-8 justify-around px-5">
+              <div className="w-[60%] md:w-[35%]">
                 <CustomPolygon width="w-full" />
               </div>
-              <div className="flex flex-col items-center w-[45%]">
+              <div className="flex flex-col items-center w-[90%] md:w-[45%]">
                 <p className="font-aoboshiOne text-2xl text-[var(--secondary-foreground)]">
                   Buy Your
                 </p>
                 <p className="font-aoboshiOne text-6xl text-[var(--secondary-foreground)]">
                   Product
                 </p>
-                <p className="font-prostoOne text-lg mt-14">
-                  Ac odio sodales mi leo vitae dui nibh turpis aliquet.
-                  Porttitor aenean egestas cras mauris at. Mi nisl turpis
-                  sodales aliquet. Quis risus lorem enim magna nisl.
+                <p className="font-prostoOne text-lg my-14">
+                  {product?.description}
                 </p>
-                <p className="font-prostoOne text-lg mb-14 mt-5">
+                {/* <p className="font-prostoOne text-lg mb-14 mt-5">
                   Nibh vitae morbi urna sapien mattis dolor dictum massa id.
                   Eget arcu nulla dolor nisi. Facilisis risus lectus odio enim
                   ut tortor facilisi neque nibh.
-                </p>
+                </p> */}
                 <MasterButton
                   text="Buy Now"
                   btnWidth="w-[8em] md:w-[10em] lg:w-[12em]"

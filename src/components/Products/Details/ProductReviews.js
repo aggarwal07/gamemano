@@ -16,7 +16,7 @@ const ProductReviews = ({ reviewsArray }) => {
             <FaLongArrowAltRight className="max-lg:w-4 max-lg:h-4" size={22} />
           </div>
         </div>
-        <div className="mt-7 flex items-center gap-3 md:gap-5 overflow-x-auto scrollbar-hide">
+        <div className="mt-7 flex items-center gap-3 md:gap-5 overflow-x-auto scrollbar-hide h-48 sm:h-52">
           {reviewsArray?.map((item, index) => {
             return <ReviewCard key={index} review={item} />;
           })}
