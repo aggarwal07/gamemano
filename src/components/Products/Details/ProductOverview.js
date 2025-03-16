@@ -35,8 +35,8 @@ const ProductOverview = ({ product }) => {
               />
             )}
           </div>
-          <div className="sm:mt-4 w-[60%] mx-auto flex flex-col items-center ">
-            <p className="text-3xl sm:text-6xl xl:text-[90px] text-center mb-2 sm:mb-5 font-cinzel text-[var(--secondary-foreground)] leading-7 sm:leading-16 xl:leading-22">
+          <div className="sm:mt-4 w-[90%] xl:w-[60%] mx-auto flex flex-col items-center ">
+            <p className="text-3xl sm:text-5xl xl:text-[90px] text-center mb-2 sm:mb-5 font-cinzel text-[var(--secondary-foreground)] leading-7 sm:leading-12 xl:leading-22">
               {product?.title}
             </p>
             <MasterButton

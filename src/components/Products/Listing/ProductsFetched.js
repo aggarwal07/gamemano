@@ -96,7 +96,7 @@ const ProductsFetched = () => {
           <p className="max-sm:text-xs max-md:text-sm">Sort by</p>
           <IoMdArrowDropdown className="max-md:w-4 max-md:h-4" size={22} />
           {isSortMenuOpen && (
-            <div className="absolute -left-12 top-3">
+            <div className="absolute right-18 -top-3 sm:-top-2 lg:-left-12 lg:top-3">
               <Dropdown menu={sortByMenu} />
             </div>
           )}

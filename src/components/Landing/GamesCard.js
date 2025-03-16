@@ -63,9 +63,9 @@ const GamesCard = ({ gameCardData }) => {
               router.push(`/productDetails/${gameCardData?.id}`);
             }}
             text="Buy Now"
-            btnWidth="w-[8em] md:w-[10em] lg:w-[12em]"
-            paddingY="py-[6px] md:py-[8px] lg:py-[10px]"
-            fontSize="max-md:text-sm"
+            btnWidth="w-[7em] sm:w-[8em] md:w-[10em] lg:w-[12em]"
+            paddingY="py-[5px] sm:py-[6px] md:py-[8px] lg:py-[10px]"
+            fontSize="max-sm:text-xs max-md:text-sm"
           />
         </div>
       </div>

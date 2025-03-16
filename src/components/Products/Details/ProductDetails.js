@@ -80,7 +80,7 @@ const ProductDetails = () => {
           <div className="md:pl-[9vw] w-full">
             <div className="flex max-md:flex-col items-center max-md:gap-8 justify-around px-5">
               <div className="w-[60%] md:w-[35%]">
-                <CustomPolygon width="w-full" />
+                <CustomPolygon width="w-full" horizontalLength={250} />
               </div>
               <div className="flex flex-col items-center w-[90%] md:w-[45%]">
                 <p className="font-aoboshiOne text-2xl text-[var(--secondary-foreground)]">
